@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>View posted Jobs</title>
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="css/fontAwesome.css">
+        <link rel="stylesheet" href="css/templatemo-style.css">
+
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+
+        <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+
+        <style>
+            table {
+              font-family: 'Montserrat', sans-serif;
+              font-size: 15px;
+              width: 100%;
+              border-collapse: collapse;
+            }
+        
+            /* Zebra striping */
+            tr:nth-of-type(odd) {
+              background: #eee;
+            }
+        
+            th {
+              background: rgb(68, 68, 68);
+              color: white;
+              font-weight: bold;
+            }
+        
+            td,
+            th {
+              border: 1px solid #8a8a8a;
+              padding: 10px;
+              text-align: left;
+            }
+            td {
+              background:rgb(240, 240, 240)
+            }
+    
+        
+            @media only screen and (max-width: 760px),
+            (min-device-width: 768px) and (max-device-width: 1024px) {
+        
+              /* Force table to not be like tables anymore */
+              table,
+              thead,
+              tbody,
+              th,
+              td,
+              tr {
+                display: block;
+              }
+        
+              /* Hide table headers (but not display: none;, for accessibility) */
+              thead tr {
+                position: absolute;
+                top: -9999px;
+                left: -9999px;
+              }
+        
+              tr {
+                border: 1px solid #ccc;
+              }
+        
+              td {
+                /* Behave  like a "row" */
+                border: none;
+                border-bottom: 1px solid #eee;
+                position: relative;
+                padding-left: 50%;
+              }
+        
+              td:before {
+                /* Now like a table header */
+                position: absolute;
+                /* Top/left values mimic padding */
+                top: 6px;
+                left: 6px;
+                width: 45%;
+                padding-right: 10px;
+                white-space: nowrap;
+              }
+        
+              /*
+                      Label the data
+                      */
+              td:nth-of-type(1):before {
+                content: "Project Name";
+              }
+        
+              td:nth-of-type(2):before {
+                content: "Description";
+              }
+        
+              td:nth-of-type(3):before {
+                content: "Skill";
+              }
+        
+              td:nth-of-type(4):before {
+                content: "Complete Date";
+              }
+        
+              td:nth-of-type(5):before {
+                content: "Payment";
+              }
+
+              td:nth-of-type(6):before {
+                content: "";
+              }
+
+              td:nth-of-type(7):before {
+                content: "";
+              }
+        
+            }
+          </style>
+    </head>
+    <body>
+
+        <div class="overlay"></div>
+        <div class="top-part">
+          <img src="img/freelancehome.jpg">
+        </div>
+        
+        <div class="cd-hero">
+
+            <li class="selected">
+              <div class="heading">
+                <br>
+                <h1>View your posted jobs</h1><br>
+                <span>You can update or delete your posted project</span>
+              </div>
+              <div class="cd-full-width first-slide">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="content third-content">
+
+                        <!-- <input id="deleteJobID" type="hidden"/>
+                       <div class="row jobs"></div> -->
+                     
+
+                      <table id="tableJob">
+                        <thead>
+                        <tr>
+                          <th>Project Name</th>
+                          <th>Description</th>
+                          <th>Skill</th>
+                          <th>Complete Date</th>
+                          <th>Payment</th>
+                          <th></th>
+                          <th></th>
+                        </tr>
+                      </thead>
+                      
+                      </table>
+
+                      <br><br><br><br><br><br><br><br><br><br><br>
+
+                      </div>
+                    </div>                  
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            
+          </div> 
+
+
+          <footer>
+            <p>
+               <span style="float:left; margin-left: 15px; margin-top: -10px;" class="loginAs"></span>
+                <span style="float:right; margin-right: 15px; margin-top: -10px;">
+                    <a href="#"id="logout" >Logout</a>
+                </span>
+            </p>
+        </footer>
+    
+
+        <script src="https://www.gstatic.com/firebasejs/7.4.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/6.3.3/firebase-firestore.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/6.3.3/firebase-auth.js"></script>
+
+        
+        <script>
+          // Your web app's Firebase configuration
+          var firebaseConfig = {
+            apiKey: "AIzaSyBajZNsGAfpvBqaRLcOTe-hx7D-IuffTzE",
+            authDomain: "erajinweb.firebaseapp.com",
+            databaseURL: "https://erajinweb.firebaseio.com",
+            projectId: "erajinweb",
+            storageBucket: "erajinweb.appspot.com",
+            messagingSenderId: "982273747000",
+            appId: "1:982273747000:web:e3309dcb3086526a595ecd",
+            measurementId: "G-PF9DZ96KDW"
+          };
+          // Initialize Firebase
+          firebase.initializeApp(firebaseConfig);
+
+          const auth = firebase.auth();
+          const db = firebase.firestore();
+
+        </script>
+        <script src="js/logout.js"></script>
+        <script src="js/userlogged.js"></script>
+        <script src="js/deleteJob.js"></script>
+      
+        
+</body>
+</html>
+
+

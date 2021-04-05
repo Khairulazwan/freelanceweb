@@ -1,0 +1,140 @@
+<!doctype html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>View Progress</title>
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="css/fontAwesome.css">
+        <link rel="stylesheet" href="css/templatemo-style.css">
+
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+
+        <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+
+        <style>
+          #list {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+          }
+        
+          #list li a {
+            border: 1px solid #ddd;
+            margin-top: -1px;
+            /* Prevent double borders */
+            background-color: #f6f6f6;
+            padding: 15px;
+            text-decoration: none;
+            font-size: 18px;
+            color: black;
+            display: block;
+            cursor: default;
+            ;
+          }
+          .divider {   
+            height: auto;
+            display: inline-block;
+        }
+
+        .divider1 {
+            
+            width:320px;
+            height: auto;
+            display: inline-block;
+        }
+
+        </style>
+    
+    </head>
+    <body>
+
+        <div class="overlay"></div>
+        <section class="top-part">
+          <img src="img/studhome.png">
+        </section>
+        
+        <section class="cd-hero">
+
+            <li class="selected">
+              <div class="heading">
+                <br>
+                <h1>View Job Progress</h1><br>
+                <span>You can see the job request that has been accepted here and check the job status.</span>
+              </div>
+              <form id="jobStatusForm"  class="cd-full-width first-slide">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="content third-content">
+          
+
+                          <div id="list" class="row status"></div>  
+                          <br>
+                          <a target="_blank" href="https://api.whatsapp.com/send?phone=&text=Hello%2C%20I%27m%20a%20freelancer%2E%20Can%20I%20get%20more%20information%20about%20the%20project%3F">Click to open Whatsapp</a>
+                          
+                          <br><br><br><br>
+                          
+                          <div class="primary-button"><div class="divider"></div>
+                                <button  id="viewButton">Give Commend/Report</button>        
+                        </div>
+                       
+                          <br><br><br><br><br><br><br><br><br>
+
+                      </div>
+                    </div>                  
+                  </div>
+                </div>
+            </form>
+            </li>
+
+            
+        </section> 
+
+
+        <footer>
+          <p>
+             <span style="float:left; margin-left: 15px; margin-top: -10px;" class="loginAs"></span>
+              <span style="float:right; margin-right: 15px; margin-top: -10px;">
+                  <a href="#"id="logout" >Logout</a>
+              </span>
+          </p>
+      </footer>
+    
+
+        <script src="https://www.gstatic.com/firebasejs/7.4.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/6.3.3/firebase-firestore.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/6.3.3/firebase-auth.js"></script>
+
+        
+        <script>
+          // Your web app's Firebase configuration
+          var firebaseConfig = {
+            apiKey: "AIzaSyBajZNsGAfpvBqaRLcOTe-hx7D-IuffTzE",
+            authDomain: "erajinweb.firebaseapp.com",
+            databaseURL: "https://erajinweb.firebaseio.com",
+            projectId: "erajinweb",
+            storageBucket: "erajinweb.appspot.com",
+            messagingSenderId: "982273747000",
+            appId: "1:982273747000:web:e3309dcb3086526a595ecd",
+            measurementId: "G-PF9DZ96KDW"
+          };
+          // Initialize Firebase
+          firebase.initializeApp(firebaseConfig);
+
+          const auth = firebase.auth();
+          const db = firebase.firestore();
+
+        </script>
+        <script src="js/logout.js"></script>
+        <script src="js/userlogged.js"></script>
+        <script src="js/studViewProgress.js"></script>
+      
+        
+</body>
+</html>

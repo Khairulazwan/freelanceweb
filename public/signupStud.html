@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>SignUp Student</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="css/loginMain.css">
+    <link rel="stylesheet" href="css/loginUtil.css">
+   
+	
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+
+</head>
+<body>
+
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100">
+				<form id="signup_form" name="myForm"  onsubmit="return(validateForm());" class="login100-form validate-form p-l-55 p-r-55 p-t-178">
+					<span class="login100-form-title">
+						SIGN UP FOR STUDENT
+					</span>
+					
+					<div class="wrap-input100 validate-input m-b-16" data-validate="Please enter full name">
+							<input class="input100" type="text" name="fullname" placeholder="Full name" id="full_name">
+							<span class="focus-input100"></span>
+					</div>
+
+
+					<div class="wrap-input100 validate-input m-b-16" data-validate="Please enter email">
+							<input class="input100" type="email" name="email" placeholder="Email" id="signup_email">
+							<span class="focus-input100"></span>
+					</div>
+
+					<div class="wrap-input100 validate-input m-b-16" data-validate = "Please enter password">
+						<input class="input100" type="password" name="pass" placeholder="Password" id="signup_password">
+						<span class="focus-input100"></span>
+					</div>
+
+					<div class="wrap-input100 validate-input m-b-16" data-validate="Please enter identification number">
+						<input class="input100" type="text" pattern="[0-9]{12}" name="icnumber" placeholder="IC number" id="ic_number">
+						<span class="focus-input100"></span>
+					</div>
+
+					<div class="wrap-input100 validate-input m-b-16" data-validate="Please enter date of birth">
+						<input class="input100" type="text" onfocus="(this.type='date')" name="dob" placeholder="Date of Birth" id="dob">
+						<span class="focus-input100"></span>
+					</div>
+
+					<div class="wrap-input100 validate-input m-b-16" data-validate="Please enter university/college">
+							<input class="input100" type="text" name="university" placeholder="University or College" id="university">
+							<span class="focus-input100"></span>
+					</div>
+
+					<div class="wrap-input100 validate-input m-b-16" data-validate="Please enter degree level">
+						<select class="input100" type="text" name="degree" placeholder="Degree Level" id="degree">
+								<option disabled selected value> Degree level </option>
+								<option value="Diploma">Diploma</option>
+								<option value="Bachelor">Bachelor</option>
+								<option value="Master">Master</option>
+								<option value="Doctoral">Doctoral</option>
+						</select>
+						<span class="focus-input100"></span>
+					</div>
+
+					<div class="wrap-input100 validate-input m-b-16" data-validate="Please enter contact number">
+						<input class="input100" type="number" name="contactno" placeholder="Contact number" id="contact_no">
+						<span class="focus-input100"></span>
+					</div>
+
+										
+					<div class="text-right p-t-13 p-b-23">
+						<p> </p>
+					</div>
+
+					<div class="container-login100-form-btn">
+						<button class="login100-form-btn">
+							Sign Up
+						</button>
+					</div>
+					
+					<div class="text-right p-t-13 p-b-23">
+							<p> </p>
+					</div>
+
+				</form>
+			</div>
+		</div>
+	</div>
+	
+	<script src="https://www.gstatic.com/firebasejs/7.4.0/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/6.3.3/firebase-auth.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/6.3.3/firebase-firestore.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/6.3.3/firebase-storage.js"></script>
+	
+	<script>
+		// Your web app's Firebase configuration
+		var firebaseConfig = {
+			apiKey: "AIzaSyBajZNsGAfpvBqaRLcOTe-hx7D-IuffTzE",
+			authDomain: "erajinweb.firebaseapp.com",
+			databaseURL: "https://erajinweb.firebaseio.com",
+			projectId: "erajinweb",
+			storageBucket: "erajinweb.appspot.com",
+			messagingSenderId: "982273747000",
+			appId: "1:982273747000:web:e3309dcb3086526a595ecd",
+			measurementId: "G-PF9DZ96KDW"
+		};
+		// Initialize Firebase
+		firebase.initializeApp(firebaseConfig);
+
+		// make auth and firestore references
+		const auth = firebase.auth();
+		const db = firebase.firestore();
+		// Get a reference to the storage service, which is used to create references in your storage bucket
+		var storage = firebase.storage();
+		// Create a storage reference from our storage service
+		var storageRef = storage.ref();
+
+	</script>
+	<script src="js/signupStud.js"></script>
+	
+</body>
+</html>

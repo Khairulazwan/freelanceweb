@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Login</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="css/loginMain.css">
+    <link rel="stylesheet" href="css/loginUtil.css">
+   
+	
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+
+
+</head>
+<body>
+
+
+	<div id="login_div" class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100">
+				<form id="login_form" class="login100-form validate-form p-l-55 p-r-55 p-t-178">
+					<span class="login100-form-title">
+						LOG IN
+					</span>
+
+					<div class="wrap-input100 validate-input m-b-16" data-validate="Please enter email">
+						<input class="input100" type="email" placeholder="Email" id="email_field">
+						<span class="focus-input100"></span>
+					</div>
+
+					<div class="wrap-input100 validate-input" data-validate = "Please enter password">
+						<input class="input100" type="password" placeholder="Password" id="password_field">
+						<span class="focus-input100"></span>
+					</div>
+
+					<div class="text-right p-t-13 p-b-23"></div> 
+
+					<div class="container-login100-form-btn">
+						<button class="login100-form-btn">
+							Log in
+						</button>
+					</div>
+
+					<div class="flex-col-c p-t-170 p-b-40">
+						<span class="txt1 p-b-9">
+							Don’t have an account?
+						</span>
+
+						<a href="signup.html" class="txt3">
+							Sign up now
+						</a>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	
+
+
+	<script src="https://www.gstatic.com/firebasejs/7.4.0/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/6.3.3/firebase-auth.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/6.3.3/firebase-firestore.js"></script>
+	
+	
+		
+	<script>
+		// Your web app's Firebase configuration
+		var firebaseConfig = {
+			apiKey: "AIzaSyBajZNsGAfpvBqaRLcOTe-hx7D-IuffTzE",
+			authDomain: "erajinweb.firebaseapp.com",
+			databaseURL: "https://erajinweb.firebaseio.com",
+			projectId: "erajinweb",
+			storageBucket: "erajinweb.appspot.com",
+			messagingSenderId: "982273747000",
+			appId: "1:982273747000:web:e3309dcb3086526a595ecd",
+			measurementId: "G-PF9DZ96KDW"
+		};
+
+		// Initialize Firebase
+		firebase.initializeApp(firebaseConfig);
+
+		// make auth and firestore references
+		const auth = firebase.auth();
+		const db = firebase.firestore();
+
+
+	</script>
+	<script src="js/login.js"></script>
+	
+
+</body>
+</html>
